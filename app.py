@@ -6,7 +6,7 @@ import json
 from google.cloud import vision
 
 # Set the environment variable to the path of your service account key file
-os.environ['GOOGLE_APPLICATION_CREDENTIALS'] = 'sigma-kayak-454504-e3-961e7dee620d.json'  # Update path
+os.environ['GOOGLE_APPLICATION_CREDENTIALS'] = os.getenv('GOOGLE_APPLICATION_CREDENTIALS')  # Update path
 
 app = Flask(__name__)
 
