@@ -1,4 +1,5 @@
 from flask import Flask, request, jsonify
+from flask_cors import CORS
 import io
 import os
 import re
@@ -9,6 +10,7 @@ from google.cloud import vision
 os.environ['GOOGLE_APPLICATION_CREDENTIALS'] = os.getenv('GOOGLE_APPLICATION_CREDENTIALS')  # Update path
 
 app = Flask(__name__)
+CORS(app, resources={r"/*": {"origins": "http://localhost:3000"}})
 
 # Function to extract text from image using GCP Vision API
 def detect_document_text_from_gcp(image_file):
