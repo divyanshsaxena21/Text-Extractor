@@ -10,7 +10,7 @@ from google.cloud import vision
 os.environ['GOOGLE_APPLICATION_CREDENTIALS'] = os.getenv('GOOGLE_APPLICATION_CREDENTIALS')  # Update path
 
 app = Flask(__name__)
-CORS(app, resources={r"/*": {"origins": "http://localhost:3000"}})
+CORS(app, resources={r"/*": {"origins": ["http://localhost:3000", "https://cal-qulate.vercel.app"]}})
 
 # Function to extract text from image using GCP Vision API
 def detect_document_text_from_gcp(image_file):
